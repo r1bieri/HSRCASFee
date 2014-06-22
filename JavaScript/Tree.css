@@ -1,0 +1,22 @@
+a {
+    text-decoration: none;
+    font-size: 20px;
+    font-style: italic;
+    color: #ff282d;
+    border-width: 0px;
+}
+
+a:focus {
+    border-width: 0px;
+}
+a:hover {
+    text-shadow: 0px 0px 16px #F77;
+}
+a[href^="http://"] {
+    background: url(external.png) center right no-repeat;
+    padding-right: 12px;
+}
+a[href^="https://"] {
+    background: url(lock.png) center right no-repeat;
+    padding-right: 15px;
+}

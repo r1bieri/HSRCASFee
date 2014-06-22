@@ -1,0 +1,17 @@
+<html><head><title>Test</title>
+</head><body>
+<form name="Test" action="">
+    Name: <input type="text" name="Eingabe" onblur="PruefeInhalt(this.value)"><br>
+    Geben Sie irgendetwas ein und klicken Sie dann woanders hin, um das Eingabefeld zu verlassen!
+</form>
+<script type="text/javascript">
+    document.Test.Eingabe.focus();
+    function PruefeInhalt (Feld) {
+        if (Feld == "") {
+            alert("Das Namensfeld muss einen Inhalt haben!");
+            document.Test.Eingabe.focus();
+            return false;
+        }
+    }
+</script>
+</body></html>

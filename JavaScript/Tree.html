@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Wir zeichnen</title>
+</head>
+
+<body>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="libTimer.js"></script>
+
+<h1>Hier wird ein Baum gezeichnet</h1>
+
+<div id="myTree"></div>
+<div id="myTrunk"></div>
+<div id="myAppel"></div>
+
+<a id="time"
+</a>
+
+<script type="text/javascript">
+//    document.addEventListener("DOMContentLoaded",function() {
+    jQuery(document).ready(function() {
+        // Der DOM ist bereit und gestartet
+
+        var myTree = document.getElementById("myTree");
+        var myTrunk = document.getElementById("myTrunk");
+        var myAppel = document.getElementById("myTrunk");
+
+        var clicks = 0;
+//    myTree.addEventListener("click",countClick, false);
+
+        // Timer
+        // Timer setzen
+        var myVar = setInterval(function () {
+            myTimer()
+        }, 1000);
+
+        // Timer aktualisieren
+        function myTimer() {
+            var d = new Date();
+            // Write the time to the dokument.
+            time("time");
+       }
+
+    function countClick( text) {
+        clicks++;
+
+        alert(clicks + " click auf " + text);
+        console.log(clicks);
+    }
+
+
+    alert("hier entsteht ein Baum");
+
+
+   //  myTree.addEventListener("click",countClick(), false);
+    //   setTimeOut(welcomeVisitor,8000);
+    myTree.style.position = "absolute";
+    myTree.style.top = "100px";
+    myTree.style.left = "150px";
+    myTree.style.width = "200px";
+    myTree.style.height = "200px";
+    myTree.style.background = "green";
+    myTree.style.borderRadius = "200px";
+    //    myTree.style.margin = "0 0 50% 50%";
+    myTree.style.zIndex = "2";
+    // myTree.onclick = countClick;
+    myTree.addEventListener("click", function(){countClick('Baumchrone')} , false);
+
+
+    myTrunk.style.position = "absolute";
+    myTrunk.style.top = "250px";
+    myTrunk.style.left = "230px";
+    myTrunk.style.width = "40px";
+    myTrunk.style.height = "150px";
+    myTrunk.style.background = "brown";
+    //    myTrunk.style.marginLeft="125px";
+    //    myTrunk.style.marginTop ="-20px";
+    //    myTrunk.style.margin = "0 0 50% 50%";
+    myTrunk.style.zIndex = "1";
+    myTrunk.onclick = function(){countClick('Baumstamm')};
+
+    console.log("Log", myTree);
+    console.dir("Dir",
+            document);
+});
+
+ /* **************************************************************************************************************
+            Folgende Zeile wird verwendet, wenn oben die Zeil mit document.addEventListener(......) verwendet wird
+        }, false);
+ *************************************************************************************************************** */
+</script>
+
+</body>
+</html>

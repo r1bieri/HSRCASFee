@@ -1,0 +1,15 @@
+.comment ul {
+    margin: 0;
+    padding: 0;
+    list-style: none ;
+    }
+
+.comments li {
+    margin: 0;
+    padding: 0;
+    list-style: circle;
+}
+
+.list-item{
+    font: 20px;
+}
