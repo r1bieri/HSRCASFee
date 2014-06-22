@@ -1,0 +1,72 @@
+/* Grundlayout */
+
+body {
+    font-size: 1.5em;
+}
+
+header,
+main,
+aside,
+footer {
+    display: block; /* ältere Browser */
+}
+
+.header {
+    background: yellow;
+    padding: 1em;
+}
+.content {
+    background: red;
+}
+.nav {
+    background: cyan;
+    box-sizing: border-box;
+    padding: 1em;
+    width: 20%;
+}
+.main {
+    background: limegreen;
+    box-sizing: border-box;
+    padding: 1em;
+    width: 60%;
+}
+.sidebar {
+    background: darkcyan;
+    box-sizing: border-box;
+    padding: 1em;
+    width: 20%;
+}
+.footer {
+    background: yellow;
+    padding: 1em;
+}
+
+
+/* Ansatz 4: "display: table-cell" (optimiert) */
+
+/* Ansatz 4: "float: left" */
+
+.nav,
+.main,
+.sidebar {
+    float: left;
+    margin-bottom: -1000em;
+    padding-bottom: 1001em;
+}
+.content:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+
+.content:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+
+/* Gleich hohe Spalten */
+
+.content {
+    overflow: hidden;
+}
