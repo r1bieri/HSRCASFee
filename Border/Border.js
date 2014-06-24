@@ -3,6 +3,8 @@
  */
 $(document).ready(function() {
     var block = $('#block');
+    var _run = false;/* Die innere Box wird mit diesem Flag getoppt oder bewegt. */
+
     console.log("width       : " + block.width());
     console.log("height      : " + block.height());
 
@@ -21,13 +23,31 @@ $(document).ready(function() {
     console.log("position left: " + block.position().left);
     console.log("position top : " + block.position().top);
 
+    block.click(function()
+    {
+       _run = !_run;
+    });
+
+    var ibl = $('<div />', {
+            text: "offset left : " + block.position().left });
+    $('#iBoxLeft').append(ibl);
+
+    var ibr = $('<div />', {
+            text: "offset top :" + block.position().left });
+    $('#iBoxRight').append(ibr);
+
+
     window.setInterval(function() {
         var current_offset = block.offset();
-        if(current_offset.left > 0) {
-            block.offset({
-                left: current_offset.left - 1,
-                top:  current_offset.top - 1
-            });
+        if ( _run ) {
+            if (current_offset.left > 0) {
+                block.offset({
+                    left: current_offset.left - 1,
+                    top: current_offset.top - 1
+                });
+            }
+         ibl.text("offset left = " + block.position().left);
+         ibr.text("offset top = " + block.position().top);
         }
     }, 50);
 });
